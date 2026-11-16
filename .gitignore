@@ -1,0 +1,10 @@
+/build*/
+/models/
+/results/
+/.venv/
+/.cache/
+/.ruff_cache/
+/src/*/build/
+/src/*/install/
+__pycache__/
+*.pyc
