@@ -42,7 +42,7 @@ minimax-h3-image text-to-image 1024x1024
 |dit transformer step(s/it) less is better|RX9060XT|RTX3060|
 |:-:|:-:|:-:|
 |stable-diffusion.cpp (vulkan) 20261116|9.24|11.83|
-|qwenimage-ncnn-vulkan 20261116|4.57|10.03|
+|h3image-ncnn-vulkan 20261116|4.57|10.03|
 
 ## [Download](https://github.com/nihui/h3image-ncnn-vulkan/releases)
 
