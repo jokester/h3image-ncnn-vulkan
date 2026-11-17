@@ -116,7 +116,7 @@ Guidance is distilled into the checkpoint. Keep `-w 1` and omit the negative pro
 Estimated text-to-image planning budgets with disk weight streaming:
 
 | Generation / output resolution | RAM budget (MiB) | VRAM budget (MiB) |
-|---|---:|---:|
+|:---:|:---:|:---:|
 | 512 × 512 | 1792 | 768 |
 | 1024 × 1024 | 1792 | 1024 |
 | 2048 × 2048 | 1792 | 1792 |
@@ -685,10 +685,10 @@ Keep the left refrigerator frame and glass door, straight shelf rails, every vis
 </td>
 </tr>
 <tr>
-<td width="24%" valign="middle">Picture 1 · original scene<br><img src="images/portrait.jpg" width="100%" alt="Picture 1: original scene and pose"></td>
-<td width="24%" valign="middle">Picture 2 · new person<br><img src="images/person-reference.jpg" width="100%" alt="Picture 2: new person identity"></td>
-<td width="8%" align="center" valign="middle">➡️</td>
-<td width="40%" valign="middle">Result · same scene<br><img src="images/person-replacement.jpg" width="100%" alt="New person in the same store scene"></td>
+<td width="31%" valign="middle">Picture 1 · original scene<br><img src="images/portrait.jpg" width="100%" alt="Picture 1: original scene and pose"></td>
+<td width="31%" valign="middle">Picture 2 · new person<br><img src="images/person-reference.jpg" width="100%" alt="Picture 2: new person identity"></td>
+<td width="7%" align="center" valign="middle">➡️</td>
+<td width="31%" valign="middle">Result · same scene<br><img src="images/person-replacement.jpg" width="100%" alt="New person in the same store scene"></td>
 </tr>
 </table>
 
