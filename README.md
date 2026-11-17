@@ -38,6 +38,12 @@ h3image-ncnn-vulkan uses [ncnn project](https://github.com/Tencent/ncnn) as the 
 </tr>
 </table>
 
+minimax-h3-image text-to-image 1024x1024
+|dit transformer step(s/it) less is better|RX9060XT|RTX3060|
+|:-:|:-:|:-:|
+|stable-diffusion.cpp (vulkan) 20261116|9.24|11.83|
+|qwenimage-ncnn-vulkan 20261116|4.57|10.03|
+
 ## [Download](https://github.com/nihui/h3image-ncnn-vulkan/releases)
 
 The release workflow builds Windows/Linux/macOS standalone packages and publishes a release with an automatic date tag (`YYYYMMDD`) pointing to the built commit. See [Build from Source](#build-from-source) to build locally.
