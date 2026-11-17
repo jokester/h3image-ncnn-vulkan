@@ -5,6 +5,8 @@ set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 cmake_minimum_required(VERSION 3.18)
 project(h3image-ncnn-vulkan LANGUAGES CXX)
 
+include(GNUInstallDirs)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -110,7 +112,6 @@ if(MSVC)
     set_property(TARGET h3image-ncnn-vulkan APPEND PROPERTY LINK_OPTIONS "/MANIFEST:EMBED")
 endif()
 
-include(GNUInstallDirs)
 install(TARGETS h3image-ncnn-vulkan RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/../README.md ${CMAKE_CURRENT_SOURCE_DIR}/../LICENSE
     DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/h3image-ncnn-vulkan)
