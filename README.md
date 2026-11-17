@@ -40,7 +40,9 @@ h3image-ncnn-vulkan uses [ncnn project](https://github.com/Tencent/ncnn) as the 
 
 ## [Download](https://github.com/nihui/h3image-ncnn-vulkan/releases)
 
-Windows/Linux/macOS standalone packages are prepared by the release workflow. See [Build from Source](#build-from-source) to build locally.
+The release workflow builds Windows/Linux/macOS standalone packages and publishes a release with an automatic date tag (`YYYYMMDD`) pointing to the built commit. See [Build from Source](#build-from-source) to build locally.
+
+Sample images are available in the repository's [images directory](https://github.com/nihui/h3image-ncnn-vulkan/tree/master/images).
 
 The executable is portable. No CUDA, PyTorch or Python runtime environment is needed for inference :)
 
@@ -273,7 +275,7 @@ The executable embeds a UTF-8 application manifest and sets the console output c
 
 ## Sample Images
 
-The examples below use this project's Vulkan pipeline and the six-step BF16 bank. The original JPEG files are included in `images/`. Expand a command to see the complete prompt, output dimensions and seed. Rendering can vary across GPU backends.
+The examples below use this project's Vulkan pipeline and the six-step BF16 bank. The original JPEG files are available in the repository's [images directory](https://github.com/nihui/h3image-ncnn-vulkan/tree/master/images). Expand a command to see the complete prompt, output dimensions and seed. Rendering can vary across GPU backends.
 
 These original scene descriptions follow the composition, material, lighting and camera detail used in the [official MiniMax-H3-Image showcase](https://github.com/MiniMax-AI/MiniMax-H3-Image/tree/main/showcase). The gallery covers photography, watercolor, science fiction, graphic design, surreal photography, fantasy environments and gongbi painting. Each image was generated at the dimensions in its command, approximately 4–5.3 megapixels. Detailed prompts and larger canvases are used here to describe and resolve scene structure; the files are original outputs from this implementation.
 

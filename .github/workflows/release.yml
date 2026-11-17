@@ -64,7 +64,7 @@ jobs:
     - name: package
       run: |
         mkdir -p ${{ env.PACKAGENAME }}
-        cp -r README.md LICENSE images ${{ env.PACKAGENAME }}
+        cp README.md LICENSE ${{ env.PACKAGENAME }}
         cp /tmp/install/bin/${{ needs.setup.outputs.APPNAME }} ${{ env.PACKAGENAME }}
         strip -g ${{ env.PACKAGENAME }}/${{ needs.setup.outputs.APPNAME }}
         zip -9 -r ${{ env.PACKAGENAME }}.zip ${{ env.PACKAGENAME }}
@@ -179,7 +179,7 @@ jobs:
     - name: package
       run: |
         mkdir -p ${{ env.PACKAGENAME }}
-        cp -r README.md LICENSE images ${{ env.PACKAGENAME }}
+        cp README.md LICENSE ${{ env.PACKAGENAME }}
         lipo -create build-x86_64/install/bin/${{ needs.setup.outputs.APPNAME }} build-arm64/install/bin/${{ needs.setup.outputs.APPNAME }} -o ${{ env.PACKAGENAME }}/${{ needs.setup.outputs.APPNAME }}
         strip ${{ env.PACKAGENAME }}/${{ needs.setup.outputs.APPNAME }}
         zip -9 -r ${{ env.PACKAGENAME }}.zip ${{ env.PACKAGENAME }}
@@ -207,7 +207,6 @@ jobs:
     - name: package
       run: |
         mkdir ${{ env.PACKAGENAME }}
-        Copy-Item -Recurse -Path "images" -Destination "${{ env.PACKAGENAME }}"
         Copy-Item -Verbose -Path "LICENSE" -Destination "${{ env.PACKAGENAME }}"
         Copy-Item -Verbose -Path "README.md" -Destination "${{ env.PACKAGENAME }}"
         Copy-Item -Verbose -Path "build\install\bin\${{ needs.setup.outputs.APPNAME }}.exe" -Destination "${{ env.PACKAGENAME }}"
@@ -235,6 +234,7 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         tag_name: ${{ needs.setup.outputs.VERSION }}
-        draft: true
+        target_commitish: ${{ github.sha }}
+        draft: false
         name: Release ${{ needs.setup.outputs.VERSION }}
         files: artifacts/*/*.zip
