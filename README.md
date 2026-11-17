@@ -54,7 +54,7 @@ The executable is portable. No CUDA, PyTorch or Python runtime environment is ne
 
 ### prepare model files
 
-Download the [h3image model folder](https://huggingface.co/nihui-szyl/h3-image-ncnn/tree/main/h3image) and place it under `models/` next to the executable, or select its location with `-m`.
+Download the [h3image model folder(huggingface)](https://huggingface.co/nihui-szyl/h3-image-ncnn/tree/main/h3image) or [h3image model folder(modelscope)](https://www.modelscope.cn/models/nihuisyzl/h3-image-ncnn) and place it under `models/` next to the executable, or select its location with `-m`.
 
 The prepared model uses the reduced DiT core and the six-step BF16 conditioning bank. The four- and five-step banks are optional experimental presets.
 
@@ -724,8 +724,7 @@ Use a large soft window light from the front left and a gentle reflected fill on
 ## Other Open-Source Code Used
 
 - https://github.com/Tencent/ncnn for fast neural network inference on all platforms
-- https://github.com/nihui/qwenimage-ncnn-vulkan for the BPE tokenizer and image codec integration
-- https://github.com/nihui/zimage-ncnn-vulkan for image codec integration
+- https://github.com/futz12/ncnn_llm for BPE tokenizer
 - https://github.com/webmproject/libwebp for WebP encoding and decoding
 - https://github.com/libjpeg-turbo/libjpeg-turbo for JPEG encoding and decoding
 - https://github.com/pnggroup/libpng for PNG encoding and decoding
