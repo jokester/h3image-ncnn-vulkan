@@ -180,7 +180,7 @@ h3image-ncnn-vulkan --ram-budget 16384 --vram-budget 4096 \
   -p "A red ceramic teapot." -o output.jpg
 ```
 
-A value of `0` selects the current available capacity automatically. The runtime plans tensors for the actual prompt, image and reference shapes, tries resident weights first, then streams weights as needed. Whole-graph VAE encoding runs when its buffers fit; smaller convolution tiles provide the low-memory fallback. Decoder tiles retain the trained context and overlap. Budgets guide allocation planning; they are not operating-system memory reservations.
+A value of `0` selects an automatic budget of `max(available × 0.95, available − 300 MiB)` for RAM and VRAM independently, reserving the smaller of 5% and 300 MiB of the current available capacity. Explicit budgets are capped by availability without this automatic reserve. The runtime plans tensors for the actual prompt, image and reference shapes, tries resident weights first, then streams weights as needed. Whole-graph VAE encoding runs when its buffers fit; smaller convolution tiles provide the low-memory fallback. Decoder tiles retain the trained context and overlap. Budgets guide allocation planning; they are not operating-system memory reservations.
 
 Compute conditioning online instead of loading a precomputed bank
 

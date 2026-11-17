@@ -777,8 +777,10 @@ uint64_t available_in_memory_limit(uint64_t available, uint64_t limit, uint64_t 
 }
 MemoryBudgets select_memory_budgets(const MemorySnapshot& available, uint64_t ram, uint64_t vram, bool gpu)
 {
-    MemoryBudgets result { ram ? std::min(ram, available.ram_available) : available.ram_available,
-        gpu ? (vram ? std::min(vram, available.vram_available) : available.vram_available) : 0, available.shared_heap };
+    const auto automatic = [](uint64_t bytes) { return bytes - std::min(bytes / 20, 300 * MiB); };
+    MemoryBudgets result { ram ? std::min(ram, available.ram_available) : automatic(available.ram_available),
+        gpu ? (vram ? std::min(vram, available.vram_available) : automatic(available.vram_available)) : 0,
+        available.shared_heap };
     result.host_visible = available.host_visible_available;
     if (result.shared_heap)
         result.vram = std::min(result.vram, result.ram);
