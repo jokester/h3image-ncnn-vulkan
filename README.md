@@ -44,6 +44,15 @@ minimax-h3-image text-to-image 1024x1024
 |stable-diffusion.cpp (vulkan) 20261116|9.24|11.83|
 |h3image-ncnn-vulkan 20261116|4.57|10.03|
 
+minimax-h3-image two reference image editting 1536x1024
+|dit transformer step(s/it) less is better|RX9060XT with 24G RAM and 15.5G VRAM|
+|:-:|:-:|
+|stable-diffusion.cpp (vulkan) 20261118|26.02|
+|h3image-ncnn-vulkan 20261118 rough-mode 0|20.25|
+|h3image-ncnn-vulkan 20261118 rough-mode 1|17.33|
+|h3image-ncnn-vulkan 20261118 rough-mode 2|15.82|
+|h3image-ncnn-vulkan 20261118 rough-mode 3|11.37|
+
 ## [Download](https://github.com/nihui/h3image-ncnn-vulkan/releases)
 
 The release workflow builds Windows/Linux/macOS standalone packages and publishes a release with an automatic date tag (`YYYYMMDD`) pointing to the built commit. See [Build from Source](#build-from-source) to build locally.
